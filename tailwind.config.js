@@ -5,7 +5,8 @@ export default {
     extend: {
       colors: {
         'custom-violet': '#AD02E0',
-        'custom-violet-dark': '#740994'
+        'custom-violet-dark': '#740994',
+        'custom-header-gray': '#F3F3F3'
       },
     }
   },

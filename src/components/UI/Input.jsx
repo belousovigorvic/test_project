@@ -1,4 +1,4 @@
-const Input = ({ placeholder, type, onChange, name, style, accept, value }) => {
+const Input = ({ placeholder, type, onChange, name, style, accept, value, minLength, maxLength }) => {
   return (
     <div>
       <input
@@ -9,6 +9,9 @@ const Input = ({ placeholder, type, onChange, name, style, accept, value }) => {
         name={name}
         accept={accept}
         value={value}
+        required
+        minLength={minLength}
+        maxLength={maxLength}
       />
     </div>
   )

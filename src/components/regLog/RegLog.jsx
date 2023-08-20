@@ -19,7 +19,7 @@ const RegLog = ({ handleClick, selectData }) => {
   }
 
   return (
-    <div className="relative rounded-lg max-w-lg m-auto px-12 pt-16 pb-14">
+    <div className="relative rounded-lg max-w-lg m-auto px-12 pt-16 pb-14 bg-white mt-10">
       <img
         onClick={handleClick}
         className="absolute top-7 right-14 h-6 w-6 cursor-pointer"

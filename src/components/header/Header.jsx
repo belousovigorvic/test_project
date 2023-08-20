@@ -11,7 +11,7 @@ const Header = ({ handleCLick, sendSelectData }) => {
   }
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between bg-custom-header-gray">
       <Logo />
       <Search />
       <div>

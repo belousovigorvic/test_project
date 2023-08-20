@@ -12,11 +12,13 @@ function App() {
   }
 
   return (
-    <div className="container m-auto">
-      <Header
-        handleCLick={() => setActiveModal(true)}
-        sendSelectData={sendSelectData}
-      />
+    <div className="bg-custom-header-gray min-h-screen">
+      <div className="container m-auto">
+        <Header
+          handleCLick={() => setActiveModal(true)}
+          sendSelectData={sendSelectData}
+        />
+      </div>
       {activeModal && (
         <RegLog
           selectData={selectMenuData}
