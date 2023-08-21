@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { signUpUser } from '../../../store/userSlice.js'
 import Input from '../../UI/Input.jsx'
@@ -7,6 +7,7 @@ import userPic from '../../../assets/images/user.png'
 import loader from '../../../assets/images/loader.gif'
 
 const Reg = () => {
+  const imageRef = useRef(null)
   const dispatch = useDispatch()
   const { signUpResponse, signUpLoading, signUpError } = useSelector(
     state => state.user
@@ -46,6 +47,7 @@ const Reg = () => {
         className="w-44 h-44 m-auto mt-10 mb-5 cursor-pointer object-cover rounded-full"
         src={data.image_file ? URL.createObjectURL(data.image_file) : userPic}
         alt="user-pic"
+        onClick={() => {imageRef.current.click()}}
       />
       <label className="uppercase text-center font-normal text-base mb-5">
         Добавить фото
@@ -56,6 +58,7 @@ const Reg = () => {
           name="image_file"
           accept="image/*"
           required
+          ref={imageRef}
         />
       </label>
       {signUpLoading ? <img className='w-8 h-8 m-auto mb-2' src={loader}/> : <span

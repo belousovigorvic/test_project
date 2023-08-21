@@ -8,7 +8,7 @@ const Search = () => {
   return (
     <div
       className={`w-80 h-14 flex items-center border-2 transition-colors border-gray-400 rounded-md ${
-        isIconVisible ? '' : 'border-custom-violet-dark'
+        isIconVisible ? '' : '!border-custom-violet-dark'
       }`}
       onClick={() => {
         inputRef.current.focus()
