@@ -8,7 +8,7 @@ import loader from '../../../assets/images/loader.gif'
 
 const Reg = () => {
   const dispatch = useDispatch()
-  const { signUpResp, signUpLoading, signUpError } = useSelector(
+  const { signUpResponse, signUpLoading, signUpError } = useSelector(
     state => state.user
   )
 
@@ -60,10 +60,10 @@ const Reg = () => {
       </label>
       {signUpLoading ? <img className='w-8 h-8 m-auto mb-2' src={loader}/> : <span
         className={`${
-          signUpResp ? 'text-green-800' : 'text-red-800'
+          signUpResponse ? 'text-green-800' : 'text-red-800'
         } font-700  text-xl`}
       >
-        {signUpResp ? signUpResp.message : signUpError}
+        {signUpResponse ? signUpResponse.message : signUpError}
       </span>}
       <Input
         value={data.username}

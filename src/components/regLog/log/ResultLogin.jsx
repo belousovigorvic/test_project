@@ -2,8 +2,8 @@ import React from 'react'
 import loader from '../../../assets/images/loader.gif'
 import { useSelector } from 'react-redux'
 
-const Result = () => {
-  const { signInResp, signInLoading, signInError } = useSelector(
+const ResultLogin = () => {
+  const { signInResponse, signInLoading, signInError } = useSelector(
     state => state.user
   )
   return (
@@ -13,15 +13,15 @@ const Result = () => {
       ) : (
         <span
           className={`text-xl ${
-            signInResp ? 'text-red-700' : 'text-green-700'
+            signInResponse ? 'text-red-700' : 'text-green-700'
           }`}
         >
-          {signInResp.user ? (
-            <span className="text-green-700">{`Logged User ${signInResp.user}`}</span>
+          {signInResponse.user ? (
+            <span className="text-green-700">{`Logged User ${signInResponse.user}`}</span>
           ) : (
             <>
-              {signInResp && !signInResp.user ? (
-                <span className="text-red-700">{signInResp}</span>
+              {signInResponse && !signInResponse.user ? (
+                <span className="text-red-700">{signInResponse}</span>
               ) : (
                 ''
               )}
@@ -38,4 +38,4 @@ const Result = () => {
   )
 }
 
-export default Result
+export default ResultLogin

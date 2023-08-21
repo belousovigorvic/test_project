@@ -4,13 +4,12 @@ import CheckBox from '../../UI/CheckBox.jsx'
 import Input from '../../UI/Input.jsx'
 import { signInUser } from '../../../store/userSlice.js'
 import { useDispatch, useSelector } from 'react-redux'
-import Result from './Result.jsx'
+import ResultLogin from './ResultLogin.jsx'
 
 
 const Log = () => {
   const dispatch = useDispatch()
   
-
   const [data, setData] = useState({
     username: '',
     password: ''
@@ -31,7 +30,7 @@ const Log = () => {
 
   return (
     <form onSubmit={handleSubmitForm} className="flex flex-col mt-11">
-      <Result/>
+      <ResultLogin/>
       <Input
         placeholder={'Username'}
         onChange={handleChangeInput}

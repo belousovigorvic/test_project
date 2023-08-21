@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import cross from '../../assets/images/cross.svg'
 import classes from './RegLog.module.css'
 import Log from './log/Log'
@@ -10,16 +10,12 @@ const RegLog = ({ handleClick, selectData }) => {
 
   const [activeMenu, setActiveMenu] = useState(selectData)
 
-  useEffect(() => {
-    console.log(selectData)
-  }, [])
-
   const handleActiveClick = menu => {
     setActiveMenu(menu)
   }
 
   return (
-    <div className="relative rounded-lg max-w-lg m-auto px-12 pt-16 pb-14 bg-white mt-10">
+    <div className="rounded-xl px-20 pt-16 pb-14 bg-white">
       <img
         onClick={handleClick}
         className="absolute top-7 right-14 h-6 w-6 cursor-pointer"

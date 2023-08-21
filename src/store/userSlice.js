@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-const BASE_URL = 'http://68.183.214.2:8666/api/auth/'
-const SIGN_IN = 'signin/'
-const SIGN_UP = 'signup/'
+const BASE_URL = import.meta.env.VITE_BASE_URL
+const SIGN_IN = import.meta.env.VITE_SIGN_IN
+const SIGN_UP = import.meta.env.VITE_SIGN_UP
 
 export const signUpUser = createAsyncThunk('user/signup', async data => {
   const { image_file, username, nickname, password } = data
@@ -34,11 +34,11 @@ export const signInUser = createAsyncThunk('user/signin', async data => {
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    signUpResp: '',
+    signUpResponse: '',
     signUpLoading: false,
     signUpError: null,
 
-    signInResp: '',
+    signInResponse: '',
     signInLoading: false,
     signInError: null
   },
@@ -51,7 +51,7 @@ const userSlice = createSlice({
       })
       .addCase(signUpUser.fulfilled, (state, action) => {
         state.signUpLoading = false
-        state.signUpResp = action.payload
+        state.signUpResponse = action.payload
       })
       .addCase(signUpUser.rejected, (state, action) => {
         state.signUpLoading = false
@@ -64,7 +64,7 @@ const userSlice = createSlice({
       })
       .addCase(signInUser.fulfilled, (state, action) => {
         state.signInLoading = false
-        state.signInResp = action.payload
+        state.signInResponse = action.payload
       })
       .addCase(signInUser.rejected, (state, action) => {
         state.signInLoading = false

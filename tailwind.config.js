@@ -6,8 +6,11 @@ export default {
       colors: {
         'custom-violet': '#AD02E0',
         'custom-violet-dark': '#740994',
-        'custom-header-gray': '#F3F3F3'
+        'custom-header-gray': '#F3F3F3',
       },
+      width: {
+        'input-width': '500px'
+      }
     }
   },
   plugins: []
